@@ -24,7 +24,7 @@ function removeHtmlSpace($html)
 }
 
 /**
- * Minify html and striple attributes.
+ * Minify html and strip some tags and attributes.
  */
 function tidyHtmlTradeData($htmlFileName, $outFileName) {
 

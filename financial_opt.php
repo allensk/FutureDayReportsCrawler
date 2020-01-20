@@ -7,7 +7,7 @@ use DOMDocument;
 use DOMXpath;
 
 /**
- * Return CUrl options
+ * Return CUrl options, default CUrl options.
  */
 function fiGetCurlOpt() {
 	// echo 'Ok';
@@ -121,6 +121,7 @@ function fiGetVerify($curlOpts)
 
 /**
  * Login with inputed verification code
+ * @param $veriCode Verification code string.
  */
 function fiLogin($curlOpts, $account, $password, $veriCode) {
 
@@ -163,6 +164,7 @@ function fiLogin($curlOpts, $account, $password, $veriCode) {
 
 /**
  * Return a array contains all day up to now
+ * @param $year Year number string. such as 2019.
  */
 function yearDateArray($year) {
 
@@ -199,7 +201,7 @@ function yearDateArray($year) {
 
 /**
  * Acquire data from the site by date
- * @param $day 2019-01-01
+ * @param $day Fixed format, for example 2019-01-01
  */
 function fiAcquireData($curlOpts, $account, $date) {
 
@@ -248,6 +250,7 @@ function fiAcquireData($curlOpts, $account, $date) {
 	echo "$date got<br/>";
 }
 
+// Main branches
 $opt = isset($_POST['opt']) ? $_POST['opt'] : '';
 $opt = isset($_GET['opt']) ? $_GET['opt'] : $opt;
 switch ($opt)
