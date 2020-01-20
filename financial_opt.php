@@ -149,6 +149,10 @@ function fiLogin($curlOpts, $account, $password, $veriCode) {
 		trigger_error(curl_error($ch));
 	}
 
+	// Create tmp folder
+	if (!is_dir("tmp"))
+		mkdir("tmp");
+
 	// Create per account folder
 	if (!is_dir("tmp/$account"))
 		mkdir("tmp/$account");
